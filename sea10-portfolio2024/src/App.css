@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+.gallery {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  
+}
+
+.cards {
+  position: absolute;
+  top: 10%;
+  left:10%;
+  transform: translate(-50%, -50%);
+}
+
+.cards li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 80vw;
+  height: 80vh;
+  text-align: center;
+  line-height: 18rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0.8rem;
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateX(-50%);
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 8px 14px;
+  background: #414141;
+  background-image: -webkit-linear-gradient(top, #575757, #414141);
+  background-image: -moz-linear-gradient(top, #575757, #414141);
+  background-image: -ms-linear-gradient(top, #575757, #414141);
+  background-image: -o-linear-gradient(top, #575757, #414141);
+  background-image: linear-gradient(to bottom, #575757, #414141);
+  text-shadow: 0px 1px 0px #414141;
+  -webkit-box-shadow: 0px 1px 0px 414141;
+  -moz-box-shadow: 0px 1px 0px 414141;
+  box-shadow: 0px 1px 0px 414141;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 auto 10px;
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  padding: 12px 25px;
+  font-family: "Signika Negative", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+button:hover {
+  background: #57a818;
+  background-image: -webkit-linear-gradient(top, #57a818, #4d9916);
+  background-image: -moz-linear-gradient(top, #57a818, #4d9916);
+  background-image: -ms-linear-gradient(top, #57a818, #4d9916);
+  background-image: -o-linear-gradient(top, #57a818, #4d9916);
+  background-image: linear-gradient(to bottom, #57a818, #4d9916);
+  text-shadow: 0px 1px 0px #32610e;
+  -webkit-box-shadow: 0px 1px 0px fefefe;
+  -moz-box-shadow: 0px 1px 0px fefefe;
+  box-shadow: 0px 1px 0px fefefe;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+button {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+a {
+  color: #88ce02;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.drag-proxy {
+  position: absolute;
+}
+
+.buttonOutlineGradient {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 68px;
+  padding: 2px;
+  font-family: Space Grotesk;
+  font-size: 16px;
+  text-align: center;
+  overflow-wrap: anywhere;
+  background: linear-gradient(135deg, #6fa24a, #15a1cc);
+  border-radius: 32px; 
+  letter-spacing: 2px; 
+}
+
+.buttonOutlineGradient::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: linear-gradient(135deg, #6fa24a, #15a1cc);
+  filter: blur(8px);
+  border-radius: 36px; 
+  opacity: 0;
+}
+
+.buttonOutlineGradient_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: #222;
+  border-radius: 36px; 
+  padding: 32px;
+}
+
+@media (any-hover: hover) {
+  .buttonOutlineGradient::before {
+    transition: opacity 0.2s;
+    will-change: filter;
+  }
+
+  .buttonOutlineGradient:hover::before {
+    opacity: 1;
+  }
+}
+
+.skip-button-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.skip-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 影を追加 */
+  transition: box-shadow 0.3s ease; /* ホバー時のトランジション */
+}
+
+.skip-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時の影の効果を強調 */
+}
+
+.mouse-halo {
+  position: absolute;
+  pointer-events: none;
+  width: 10cm;
+  height: 10cm;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 255, 0.3); /* 青色の半透明 */
+  transform: translate(-50%, -50%);
+  z-index: 99999; /* 他の要素よりも手前に表示 */
+  transition: opacity 0.3s ease; /* フェードイン/フェードアウトのトランジション */
+}
